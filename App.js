@@ -1,25 +1,13 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
 
 import React from 'react';
-
-import {
-  SafeAreaView, Text,
- 
-} from 'react-native';
+import MainRoute from './src/routes'
 
 
 function App() {
 
 
   return (
-    <SafeAreaView>
-      <Text>The movie app</Text>
-    </SafeAreaView>
+    <MainRoute />
   );
 }
 
