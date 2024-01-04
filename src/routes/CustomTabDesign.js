@@ -1,5 +1,6 @@
-import { View, TouchableOpacity, Text, Image } from "react-native";
+import { View, TouchableOpacity, Image } from "react-native";
 import { NOW_PLAYING, POPULAR_ICON, TOP_RATED, UPCOMING } from './../configs/images'
+import { Text } from './../components/styles';
 
 const NAV_ICONS = {
     'top-rated': TOP_RATED,
@@ -45,8 +46,8 @@ function CustomTabDesign({ state, descriptors, navigation }) {
               onLongPress={onLongPress}
               style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
             >
-                <Image source={NAV_ICONS[route.name]} tintColor={isFocused ? '#673ab7' : '#222'} style={{ height: 20, width: 20 }} />
-                <Text style={{ color: isFocused ? '#673ab7' : '#222' }}>
+                <Image source={NAV_ICONS[route.name]} tintColor={isFocused ? '#673ab7' : '#222'} style={{ height: 18, width: 18 }} />
+                <Text style={{ color: isFocused ? '#673ab7' : '#222', marginTop: 2 }}>
                     {label}
                 </Text>
             </TouchableOpacity>

@@ -3,13 +3,7 @@ import React from 'react';
 import MainRoute from './src/routes'
 
 
-function App() {
-
-
-  return (
-    <MainRoute />
-  );
-}
+const App = () => <MainRoute />
 
 
 export default App;
