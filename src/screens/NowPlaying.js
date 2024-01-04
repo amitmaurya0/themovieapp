@@ -1,11 +1,13 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import MovieList from './../components/MovieList'
+import MainWrapper from './../components/MainWrapper'
 
 const NowPlaying = () => {
   return (
-    <View>
-      <Text>Now Playing</Text>
-    </View>
+    <MainWrapper title='Now Playing'>
+      <MovieList />
+    </MainWrapper>
   )
 }
 

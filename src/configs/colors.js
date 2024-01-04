@@ -7,7 +7,7 @@ export default {
     red: "#FE0F0F",
     orange: "#FFB800",
     transparent: 'transparent',
-    variantOptionColor: '#3A484C'
+    textColor: '#3A484C'
 
 }
 
