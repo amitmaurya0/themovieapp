@@ -3,7 +3,7 @@ import colors from "../../configs/colors";
 import { Dimensions } from "react-native";
 const windowWidth = Dimensions.get('window').width;
 
-const itemWidth = windowWidth/2-26;
+export const itemWidth = windowWidth/2-26;
 
 export const MovieItemContainer = styled.View`
     max-width: ${itemWidth}px;

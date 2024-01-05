@@ -7,7 +7,9 @@ export default {
     red: "#FE0F0F",
     orange: "#FFB800",
     transparent: 'transparent',
-    textColor: '#3A484C'
+    textColor: '#3A484C',
+    skeletonBg: '#3A484C',
+    skeletonHighlight: '#3F4243',
 
 }
 

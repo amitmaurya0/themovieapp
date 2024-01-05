@@ -4,7 +4,7 @@ import { fetchMovies } from "../apis/movie";
 
 export const useFetchMovie = (url) => {
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState('');
     const [movies, setMovies] = useState([]);
 
 
@@ -12,10 +12,10 @@ export const useFetchMovie = (url) => {
         fetchMovies(url)
         .then(data => {
             setLoading(false)
-            setMovies(data.results)
+            setMovies(data.results);
         }).catch((e) => {
             setLoading(false)
-            setError(e.message)
+            setError(e)
         })
     }, []);
 

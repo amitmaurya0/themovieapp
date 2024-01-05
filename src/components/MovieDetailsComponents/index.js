@@ -11,7 +11,6 @@ const MovieDetailsComponents = ({ details }) => {
   const { originaImageBase } = useContext(ConfigContext);
   return (
     <ScrollView>
-
       <MovieDetailsContainer>
         <MovieDetailsImage resizeMode="contain" source={{ uri: originaImageBase+details.poster_path }} />
         <Spacer />

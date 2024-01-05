@@ -11,3 +11,13 @@ export const RatingStarImage = styled.Image`
     width: 15px;
     margin-right: 5px;
 `;
+
+export const ErrorContainer = styled.View`
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+`;
+export const ErrorImage = styled.Image`
+    height: 50px;
+    width: 50px;
+`;

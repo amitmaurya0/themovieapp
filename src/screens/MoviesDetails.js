@@ -1,11 +1,10 @@
-import { View, Text } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import MainWrapper from '../components/MainWrapper'
-import { useFetchMovie } from '../hooks'
 import urls from '../apis/urls'
-import Loading from '../components/Loading'
 import MovieDetailsComponents from '../components/MovieDetailsComponents'
+import MovieDetailsSkeleton from '../components/MovieDetailsComponents/MovieDetailsSkeleton'
 import { fetchMovies } from '../apis/movie'
+import Error from '../components/Shared/Error'
 
 const MoviesDetails = ({ route }) => {
   const { movie_id } = route.params;
@@ -27,7 +26,8 @@ const MoviesDetails = ({ route }) => {
 
   return (
     <MainWrapper back={true}>
-      {loading && <Loading />}
+      {loading && <MovieDetailsSkeleton />}
+      <Error error={error} />
       {!loading && error == '' ? <MovieDetailsComponents details={details} /> : null}
     </MainWrapper>
   )

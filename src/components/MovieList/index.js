@@ -1,13 +1,11 @@
 import { FlatList, View } from 'react-native'
 import React, { useContext } from 'react'
 import MovieItem from '../MovieItem'
-import {Text} from './../styles'
-import { makeReleaseDate } from '../../utils'
-import Loading from './../Loading'
 import { useNavigation } from '@react-navigation/core'
 import { ConfigContext } from '../../ConfigProvider'
-
-const MovieList = ({ movies, loading, error }) => {
+import MovieListSkeleton from './MovieListSkeleton';
+import Error from './../Shared/Error'
+const MovieList = ({ movies, loading, error='' }) => {
   const { thumbImageBase } = useContext(ConfigContext);
   const navigation = useNavigation();
   const onItemPress = (movieId) => {
@@ -16,8 +14,9 @@ const MovieList = ({ movies, loading, error }) => {
 
   return (
     <View>
-      { loading && <Loading /> }
-      <FlatList 
+      { loading && <MovieListSkeleton /> }
+      {<Error error={error} />}
+      { !loading && error == '' ? <FlatList 
         data={movies}
         renderItem={({ item }) => <MovieItem imageBase={thumbImageBase} onPress={() => onItemPress(item.id)} movie={item} />}
         style={{ marginBottom: 40 }}
@@ -26,7 +25,7 @@ const MovieList = ({ movies, loading, error }) => {
         numColumns={2}
         contentContainerStyle={{ gap: 10 }}
         columnWrapperStyle={{ gap: 10 }}
-      />
+      /> : null}
     </View>
   )
 }
