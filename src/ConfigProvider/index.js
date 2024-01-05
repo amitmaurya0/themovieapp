@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react'
-import Loading from '../components/Loading'
+import Loading from '../components/Shared/Loading'
 import { fetchMovieConifguration } from '../apis/movie';
+import Error from '../components/Shared/Error';
 export const ConfigContext = createContext(null);
 
 const ConfigProvider = ({ children }) => {
@@ -29,7 +30,9 @@ const ConfigProvider = ({ children }) => {
 
     return (
         <ConfigContext.Provider value={{ thumbImageBase, originaImageBase }}>
-            {loading ? <Loading /> : children}
+            <Error error={error} /> 
+            {loading && <Loading />}
+            { !loading && error == ''  ? children : null}
         </ConfigContext.Provider>
     )
 }

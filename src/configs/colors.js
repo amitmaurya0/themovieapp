@@ -1,6 +1,7 @@
 export default {
     mainColor: "#38b9f2",
     textBlack: "#464c4f",
+    bgColor: "#1F1E1E",
     white: "#ffffff",
     greyColor: "#CBCFD1",
     green: "#00BE2A",

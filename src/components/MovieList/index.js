@@ -1,13 +1,18 @@
-import { FlatList, View } from 'react-native'
+import { Dimensions, FlatList, View } from 'react-native'
 import React, { useContext } from 'react'
 import MovieItem from '../MovieItem'
 import { useNavigation } from '@react-navigation/core'
 import { ConfigContext } from '../../ConfigProvider'
 import MovieListSkeleton from './MovieListSkeleton';
 import Error from './../Shared/Error'
-const MovieList = ({ movies, loading, error='' }) => {
+import Loading from '../Shared/Loading'
+import { Spacer } from '../styles'
+const MovieList = ({ movies, loading, error='', handleEndReached, loadingMoreData=false }) => {
   const { thumbImageBase } = useContext(ConfigContext);
   const navigation = useNavigation();
+
+  const numColumns = Dimensions.get('window').width > 600 ? 5 : 2;
+
   const onItemPress = (movieId) => {
     navigation.navigate('Details', { movie_id: movieId })
   }
@@ -22,9 +27,12 @@ const MovieList = ({ movies, loading, error='' }) => {
         style={{ marginBottom: 40 }}
         keyExtractor={item => item.id}
         horizontal={false}
-        numColumns={2}
+        numColumns={numColumns}
         contentContainerStyle={{ gap: 10 }}
         columnWrapperStyle={{ gap: 10 }}
+        onEndReached={handleEndReached}
+        onEndReachedThreshold={10} 
+        ListFooterComponent={loadingMoreData ? <><Spacer /><Loading /><Spacer space={20} /></> : null}
       /> : null}
     </View>
   )

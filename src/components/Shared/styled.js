@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import colors from "../../configs/colors";
 
 
 export const RatingContainer = styled.View`
@@ -20,4 +21,11 @@ export const ErrorContainer = styled.View`
 export const ErrorImage = styled.Image`
     height: 50px;
     width: 50px;
+`;
+
+export const LoadingContainer = styled.View`
+    flex:1; 
+    background-color: ${colors.bgColor}; 
+    align-items: center;
+    justify-content: center;
 `;

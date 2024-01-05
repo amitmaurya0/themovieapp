@@ -6,10 +6,16 @@ import { useFetchMovie } from '../hooks'
 import urls from '../apis/urls'
 
 const TopRated = () => {
-  const [loading, movies, error] = useFetchMovie(urls.topRated)
+  const [loading, movies, error, loadingMoreData, onReachEnd] = useFetchMovie(urls.topRated)
   return (
     <MainWrapper title='Top Rated'>
-      <MovieList loading={loading} movies={movies} error={error} />
+      <MovieList
+        loading={loading}
+        movies={movies}
+        error={error}
+        handleEndReached={onReachEnd}
+        loadingMoreData={loadingMoreData}
+      />
     </MainWrapper>
   )
 }

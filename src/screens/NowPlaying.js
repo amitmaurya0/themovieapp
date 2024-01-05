@@ -5,10 +5,16 @@ import urls from './../apis/urls'
 import { useFetchMovie } from './../hooks'
 
 const NowPlaying = () => {
-  const [loading, movies, error] = useFetchMovie(urls.nowPlaying)
+  const [loading, movies, error, loadingMoreData, onReachEnd] = useFetchMovie(urls.nowPlaying);
+
   return (
     <MainWrapper title='Now Playing'>
-      <MovieList loading={loading} movies={movies} error={error} />
+      <MovieList
+        loading={loading}
+        movies={movies}
+        error={error}
+        handleEndReached={onReachEnd}
+        loadingMoreData={loadingMoreData} />
     </MainWrapper>
   )
 }

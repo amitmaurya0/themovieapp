@@ -1,6 +1,7 @@
 import React from 'react'
 import { View } from 'react-native';
 import styled from 'styled-components/native';
+import colors from '../../configs/colors';
 
 const StyledWrapper = styled.View`
     padding-top: 25px;
@@ -8,7 +9,7 @@ const StyledWrapper = styled.View`
     padding-right: 20px;
     padding-bottom: 0px;
     flex: 1;
-    background-color: #1F1E1E;
+    background-color: ${colors.bgColor};
 `;
 
 export const LeftSideContainer = styled.View`

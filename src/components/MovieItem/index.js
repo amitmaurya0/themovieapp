@@ -4,7 +4,7 @@ import { MovieItemContainer, MovieItemImage, MovieitemDetail, RatingContainer, R
 import { makeReleaseDate } from '../../utils'
 import { Spacer, Text } from '../styles'
 import colors from '../../configs/colors'
-import fonts from '../../configs/fonts'
+import fonts, { fontSize } from '../../configs/fonts'
 import Rating from './../Shared/Rating';
 
 const MovieItem = ({ movie, onPress, imageBase }) => {
@@ -17,7 +17,8 @@ const MovieItem = ({ movie, onPress, imageBase }) => {
             <Text 
               numberOfLines={2} 
               ellipsizeMode="tail"
-              color={colors.white} 
+              color={colors.white}
+              size={fontSize.m} 
               fontFamily={fonts.bold} 
               style={{ textAlign: 'center', flexWrap: 'wrap' }}>
                 {movie.title}
@@ -29,7 +30,6 @@ const MovieItem = ({ movie, onPress, imageBase }) => {
               </Text>
             <Spacer space={2} />
             <Rating voteAverage={movie.vote_average} voteCount={movie.vote_count} />
-           
           </MovieitemDetail>
       </MovieItemContainer>
     </TouchableOpacity>
