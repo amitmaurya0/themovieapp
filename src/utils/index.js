@@ -5,5 +5,5 @@ export const makeReleaseDate = (date) => {
     const day = dateObject.getDate();
     const month = dateObject.toLocaleString('default', { month: 'short' }); // 'short' gives the first three letters
     const year = dateObject.getFullYear();
-    return `${day}, ${month} ${year}`
+    return `${month} ${day}, ${year}`
 }
