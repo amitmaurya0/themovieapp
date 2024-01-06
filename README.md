@@ -62,4 +62,4 @@ To run the app locally, follow these steps:
 
 ## Video Demo
 
-[https://drive.google.com/file/d/1ErCRiB8GG1LimsXbOntuf5nqRFk6gyJM/view?usp=sharing](#)  <!-- Add your video link here -->
+[View Demo of the App](https://drive.google.com/file/d/1ErCRiB8GG1LimsXbOntuf5nqRFk6gyJM/view?usp=sharing)  
